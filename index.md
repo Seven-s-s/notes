@@ -1,5 +1,7 @@
-## [Git的用法]((https://seven-s-s.github.io/notes/))
+## [Git的用法](https://seven-s-s.github.io/notes/)
 
 ## [IDEA的用法](https://seven-s-s.github.io/notes/IDEA)
 
-## [Java](https://seven-s-s.github.io/notes/JAVA)
+## [Java](https://seven-s-s.github.io/notes/Java)
+
+## [面试题](https://seven-s-s.github.io/notes/面试题)
