@@ -5,14 +5,18 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1"> 
 		<title>七音</title>
 		<link rel="shortcut icon" href="./qiyin/img/cat.png">
+		<link rel="stylesheet" type="text/css" href="https://www.layuicdn.com/layui/css/layui.css" />
 		<link rel="stylesheet" type="text/css" href="./qiyin/css/normalize.css">
 		<link rel="stylesheet" type="text/css" href="./qiyin/css/demo.css">
 		<link rel="stylesheet" type="text/css" href="./qiyin/css/component.css">
 		<link rel="stylesheet" type="text/css" href="./qiyin/css/jquery.alerts.css">
 		<link rel="stylesheet" type="text/css" href=".//qiyin/css/loader.css">
+
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" rel="stylesheet">
 		<script src="./qiyin/js/modernizr.custom.js"></script>
 		<script src="./qiyin/js/jquery-1.8.3.min.js"></script>
 		<script src="./qiyin/js/jquery.alerts.js"></script>
+
 
 		<style type="text/css">
 			#popup_container.custom_style_dialog {
@@ -55,7 +59,7 @@
 	<body>
 		<div id="loader-wrapper">
             <div id="loader"></div>
-            <div class="loader-section section-left"></div>
+            <div class="loader-section section-left"  style="background: rgb(152, 191, 246)"></div>
             <div class="loader-section section-right"></div>
             <div class="load_title">正在加载七音的学习笔记...</div>
         </div>
@@ -90,21 +94,111 @@
 			
 			<header class="codrops-header">
 				<h2>七音的学习笔记 </h2>
-				<div style="padding: 20px; font-style: normal;">学习目录<div>
+				<div  style="display: '';" id="main">
+				<div style="padding: 20px; font-style: normal;">学习目录</div>
 				<nav class="codrops-demos">
-					<a target="_self" href="http://www.qiying.online/summary/typora">typora</a>
-					<a target="_self" href="http://www.qiying.online/summary/java">Java</a>
-					<a target="_self" href="http://www.qiying.online/summary/idea">IDEA的常用命令</a>
-					<a target="_self" href="http://www.qiying.online/summary/interview-questions">Java面试题</a>
-					<a target="_self" href="javascript:confirm('开发中...');">更多</a>
-					
+					<a target="_self" href="javascript:go('main','java')">Java</a>
+					<a target="_self" href="javascript:go('main','frame')">框架</a>
+					<a target="_self" href="javascript:go('main','sql')">数据库</a>
+					<a target="_self" href="javascript:go('main','web')">前端</a>
+					<a target="_self" href="">Linux</a>
+					<a target="_self" href="javascript:go('main','other')">其他工具</a>
+					<!-- <a target="_self" href="javascript:confirm('开发中...');">更多</a> -->
+					<a target="_self" href="index1.html">更多</a>
 				</nav>
+				</div>
+				<div style="display: none;" id="java">
+				<div style="padding: 20px; font-style: normal;">Java</div>
+				<nav class="codrops-demos" >
+					<a target="_self" href="javascript:tips()">基础</a>
+					<a target="_self" href="javascript:tips()">集合</a>
+					<a target="_self" href="javascript:tips()">IO</a>
+					<a target="_self" href="javascript:tips()">File</a>
+					<a target="_self" href="javascript:tips()">待填充</a>
+					<a target="_self" href="javascript:confirm('让我再想想吧...');">更多</a>
+					<a target="_self" href="javascript:back('java','main')">返回</a>
+				</nav>
+			</div>
+			<div style="display: none;" id="frame">
+				<div style="padding: 20px; font-style: normal;">框架</div>
+				<nav class="codrops-demos" >
+					<a target="_self" href="javascript:tips()">spring</a>
+					<a target="_self" href="javascript:tips()">springmvc</a>
+					<a target="_self" href="javascript:tips()">mybatis</a>
+					<a target="_self" href="javascript:tips()">springboot</a>
+					<a target="_self" href="javascript:tips()">待填充</a>
+					<a target="_self" href="javascript:confirm('让我再想想吧...');">更多</a>
+					<a target="_self" href="javascript:back('frame','main')">返回</a>
+				</nav>
+			</div>
+			<div style="display: none;" id="sql">
+				<div style="padding: 20px; font-style: normal;">数据库</div>
+				<nav class="codrops-demos">
+					<a target="_self" href="javascript:tips()">MySQL</a>
+					<a target="_self" href="javascript:tips()">Orcale</a>
+					<a target="_self" href="javascript:tips()">MongoDB</a>
+					<a target="_self" href="javascript:tips()">Redis</a>
+					<a target="_self" href="javascript:tips()">待填充</a>
+					<a target="_self" href="javascript:confirm('让我再想想吧...');">更多</a>
+					<a target="_self" href="javascript:back('sql','main')">返回</a>
+				</nav>
+			</div>
+			<div style="display: none;" id="web">
+				<div style="padding: 20px; font-style: normal;">前端</div>
+				<nav class="codrops-demos">
+					<a target="_self" href="javascript:tips()">javascript</a>
+					<a target="_self" href="javascript:tips()">bootstrap</a>
+					<a target="_self" href="javascript:tips()">layui</a>
+					<a target="_self" href="javascript:tips()">vue</a>
+					<a target="_self" href="javascript:tips()">待填充</a>
+					<a target="_self" href="javascript:confirm('让我再想想吧...');">更多</a>
+					<a target="_self" href="javascript:back('web','main')">返回</a>
+				</nav>
+			</div>
+			<div style="display: none;" id="other">
+				<div style="padding: 20px; font-style: normal;">工具</div>
+				<nav class="codrops-demos" >
+					<a target="_self" href="http://www.qiying.online/summary/idea">Idea</a>
+					<a target="_self" href="http://www.qiying.online/summary/typora">typora</a>
+					<a target="_self" href="javascript:tips()">git</a>
+					<a target="_self" href="javascript:tips()">待填充</a>
+					<a target="_self" href="javascript:tips()">待填充</a>
+					<a target="_self" href="javascript:confirm('让我再想想吧...');">更多</a>
+					<a target="_self" href="javascript:back('other','main')">返回</a>
+				</nav>
+			</div>
 				<div class="codrops-demos">
 					© 2020-2021  www.qiying.online
 				</div>
-			</div></div></header>
+			</div></div>
+		</header>
 		</div>
 		
 </body>
+<!-- <script src="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.js"></script> -->
+<script src="https://www.layuicdn.com/layui/layui.js"></script>
 
+<script type="text/javascript">
+	function go(main,other){
+		var m = document.getElementById(main);
+		var o = document.getElementById(other);
+		if(m.style.display==""){
+			m.style.display="none";
+			o.style.display="";		
+		}
+	}
+	function back(other,main){
+		var o = document.getElementById(other);
+		var m = document.getElementById(main);
+		if(o.style.display==""){
+			m.style.display="";
+			o.style.display="none";
+		}
+	}
+	function tips(){
+		layui.use('layer',function(){
+			layer.msg("作者偷懒中...");
+        })
+	}
+</script>
 </html>
