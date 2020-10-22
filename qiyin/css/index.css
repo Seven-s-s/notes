@@ -1,0 +1,16 @@
+.x{
+    float: right;
+    display: none;
+}
+.y{
+    height: 21px;
+}
+.test:hover .x{
+    display: initial;
+}
+.test:hover .y{
+    display: none;
+}
+.test{
+    height: 88px;
+}
